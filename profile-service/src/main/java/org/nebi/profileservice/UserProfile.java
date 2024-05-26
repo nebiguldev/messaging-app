@@ -1,4 +1,4 @@
-package org.nebi.authservice;
+package org.nebi.profileservice;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,12 +13,11 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    private String password;
     private String firstName;
     private String lastName;
     private String email;

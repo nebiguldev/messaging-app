@@ -1,2 +1,19 @@
-package org.nebi.authservice;public class UserService {
+package org.nebi.authservice;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+    @Autowired
+    private UserRepository userRepository;
+
+    public User register(User user) {
+        //todo :  parola hashleme eklenecek
+        return userRepository.save(user);
+    }
+
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username).orElse(null);
+    }
 }
